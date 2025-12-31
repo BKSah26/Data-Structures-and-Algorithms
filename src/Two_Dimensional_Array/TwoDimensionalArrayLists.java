@@ -48,5 +48,29 @@ public class TwoDimensionalArrayLists {
             }
             System.out.println();
         }
+        System.out.println();
+
+        //Printing using For Each Loop
+        for (ArrayList<Integer> array : arr){
+            for (int ele : array){
+                System.out.print(ele+" ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        //Adding new ArrayList
+        arr.add(new ArrayList<Integer>());
+        arr.get(arr.size()-1).add(10);
+        arr.get(arr.size()-1).add(20);
+        arr.get(arr.size()-1).add(30);
+
+        for (ArrayList<Integer> array : arr){
+            for (int ele : array){
+                System.out.print(ele+" ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
