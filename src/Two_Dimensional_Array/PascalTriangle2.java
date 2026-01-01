@@ -1,18 +1,9 @@
 package Two_Dimensional_Array;
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class PascalTriangle {
-    public static void print(ArrayList<ArrayList<Integer>> arr){
-        for (ArrayList<Integer> array : arr){
-            for (int ele : array){
-                System.out.print(ele+" ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-    }
+public class PascalTriangle2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter nth row of Pascal's Triangle: ");
@@ -32,6 +23,6 @@ public class PascalTriangle {
             }
             arr.add(newarr);
         }
-        print(arr);
+        System.out.println(arr.get(n-1));
     }
 }
