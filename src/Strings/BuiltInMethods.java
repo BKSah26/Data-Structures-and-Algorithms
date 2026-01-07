@@ -20,5 +20,9 @@ public class BuiltInMethods {
         s1.concat(s2);  //This doesn't add the string as during concatenation, a new string is created.
         System.out.println(s1);
         System.out.println(s1.concat(s2));
+
+        String intstr = "7854569";
+        int n = Integer.parseInt(intstr);
+        System.out.println(n);
     }
 }

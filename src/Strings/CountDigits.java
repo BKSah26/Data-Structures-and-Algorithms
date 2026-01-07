@@ -1,0 +1,14 @@
+package Strings;
+
+import java.util.Scanner;
+
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        String str = ""+n;
+        System.out.println("Length: "+str.length());
+    }
+}
