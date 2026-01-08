@@ -15,5 +15,11 @@ public class ReverseString {
             i--;
         }
         System.out.println("Reversed string: "+newstr);
+
+        //Built in Method
+        StringBuilder s = new StringBuilder(str);
+        s.reverse();
+        str = s.toString();
+        System.out.println("Reversed String: "+str);
     }
 }
