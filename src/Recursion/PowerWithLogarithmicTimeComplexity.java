@@ -18,12 +18,12 @@ public class PowerWithLogarithmicTimeComplexity {
             return 1;
         }
         else if (b%2==0){
-            int ans = power(a, b/2)*power(a, b/2);
-            return ans;
+            int ans = power(a, b/2);
+            return ans*ans;
         }
         else{
-            int ans = power(a, b/2)*power(a, b/2)*a;
-            return ans;
+            int ans = power(a, b/2);
+            return ans*ans*a;
         }
     }
 }
