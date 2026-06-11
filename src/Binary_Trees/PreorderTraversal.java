@@ -30,10 +30,12 @@ public class PreorderTraversal {
         Node c = new Node(4);
         Node d = new Node(5);
         Node e = new Node(6);
+        Node f = new Node(7);
 
         a.left = c;
         a.right = d;
-        b.right = e;
+        b.left = e;
+        b.right = f;
 
         preOrder(root);
     }
