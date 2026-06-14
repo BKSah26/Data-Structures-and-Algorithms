@@ -1,6 +1,6 @@
 package Binary_Trees;
 
-public class PreorderTraversal {
+public class InorderTraversal {
     public static class Node{
         int val;
         Node left;
@@ -11,13 +11,13 @@ public class PreorderTraversal {
         }
     }
 
-    public static void preOrder(Node root){
+    public static void inOrder(Node root){
         if (root==null){
             return;
         }
+        inOrder(root.left);
         System.out.println(root.val);
-        preOrder(root.left);
-        preOrder(root.right);
+        inOrder(root.right);
     }
     public static void main(String[] args) {
         Node root = new Node(1);
@@ -37,6 +37,6 @@ public class PreorderTraversal {
         b.left = e;
         b.right = f;
 
-        preOrder(root);
+        inOrder(root);
     }
 }
