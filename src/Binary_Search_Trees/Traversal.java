@@ -1,6 +1,9 @@
-package Binary_Trees;
+package Binary_Search_Trees;
 
-public class ElementsOfNthLevel {
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Traversal {
     public static class Node{
         int val;
         Node left;
@@ -11,23 +14,21 @@ public class ElementsOfNthLevel {
         }
     }
 
-    public static int height(Node root){
-        if (root==null || (root.left == null && root.right==null)){
-            return 0;
-        }
-        return 1+Math.max(height(root.left), height(root.right));
-    }
-
-    public static void nthLevel(Node root, int n){
+    public static void bfs(Node root){
+        Queue<Node> q = new LinkedList<>();
         if (root==null){
             return;
         }
-        if (n==1){
-            System.out.print(root.val+" ");
+        q.add(root);
+        while (q.size()>0){
+            if (root.left!=null) q.add(root.left);
+            if (root.right!=null) q.add(root.right);
+            Node temp = q.remove();
+            System.out.print(temp.val+" ");
+            root=q.peek();
         }
-        nthLevel(root.left, n-1);
-        nthLevel(root.right, n-1);
     }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         Node a = new Node(2);
@@ -46,10 +47,6 @@ public class ElementsOfNthLevel {
         b.left = e;
         b.right = f;
 
-        int len = height(root);
-        for (int i=1; i<=len+1; i++){
-            nthLevel(root, i);
-            System.out.println();
-        }
+        bfs(root);
     }
 }
