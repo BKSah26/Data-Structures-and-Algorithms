@@ -63,6 +63,5 @@ public class TopologicalSortBFS {
         for (int ele : finAns){
             System.out.print(ele+" ");
         }
-//        boolean[] isVisited = new boolean[V];
     }
 }
