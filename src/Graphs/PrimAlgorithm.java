@@ -68,10 +68,10 @@ public class PrimAlgorithm {
             }
 
             for (Pair p : graph.get(node)){
-                if (p.node == parent){
+                if (p.node == parent || isVisited[p.node]){
                     continue;
                 }
-                if (!isVisited[p.node]){
+                else{
                     pq.add(new Triplet(p.node, node, p.dist));
                 }
             }
