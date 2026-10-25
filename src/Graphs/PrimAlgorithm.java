@@ -2,23 +2,33 @@ package Graphs;
 
 import java.util.*;
 
-class Triplet implements Comparable<Triplet>{
-    int node;
-    int parent;
-    int cost;
-
-    Triplet(int node, int parent, int cost){
-        this.node = node;
-        this.parent = parent;
-        this.cost = cost;
-    }
-
-    public int compareTo(Triplet t){
-        return Integer.compare(this.cost, t.cost);
-    }
-}
-
 public class PrimAlgorithm {
+    public static class Pair{
+        int node;
+        int dist;
+
+        Pair(int node, int dist){
+            this.node = node;
+            this.dist = dist;
+        }
+    }
+
+    public static class Triplet implements Comparable<Triplet>{
+        int node;
+        int parent;
+        int cost;
+
+        Triplet(int node, int parent, int cost){
+            this.node = node;
+            this.parent = parent;
+            this.cost = cost;
+        }
+
+        public int compareTo(Triplet t){
+            return Integer.compare(this.cost, t.cost);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the no. of nodes in the Graph: ");

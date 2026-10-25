@@ -1,25 +1,21 @@
 package Graphs;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Scanner;
-
-class Pair implements Comparable<Pair>{
-    int node;
-    int dist;
-
-    Pair(int node, int dist){
-        this.node = node;
-        this.dist = dist;
-    }
-
-    public int compareTo(Pair p){
-        return Integer.compare(this.dist, p.dist);
-    }
-}
+import java.util.*;
 
 public class DijkstraAlgorithm {
+    public static class Pair implements Comparable<Pair>{
+        int node;
+        int dist;
+
+        Pair(int node, int dist){
+            this.node = node;
+            this.dist = dist;
+        }
+
+        public int compareTo(Pair p){
+            return Integer.compare(this.dist, p.dist);
+        }
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
