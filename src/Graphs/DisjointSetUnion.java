@@ -9,18 +9,11 @@ public class DisjointSetUnion {
         }
         return find(parent, parent[a]);
     }
-    public static void union(int[] parent, int[] size, int a, int b){
+    public static void union(int[] parent, int a, int b){
         int gA = find(parent, a);
         int gB = find(parent, b);
         if (gA!=gB){
-            if (gA>gB){
-                parent[gB]=gA;
-                gA+=size[gB];
-            }
-            else{
-                parent[gA]=gB;
-                gB+=size[gA];
-            }
+            parent[gB]=gA;
         }
     }
     public static void main(String[] args) {
@@ -40,14 +33,12 @@ public class DisjointSetUnion {
         }
 
         int[] parent = new int[V];
-        int[] size = new int[V];
         for (int i=0; i<V; i++){
             parent[i]=i;
-            size[i]=1;
         }
 
         for (int i=0; i<E; i++){
-            union(parent, size, graph[i][0], graph[i][1]);
+            union(parent, graph[i][0], graph[i][1]);
         }
 
         int count = 0;
