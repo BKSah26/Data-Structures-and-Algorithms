@@ -3,18 +3,18 @@ package Graphs;
 import java.util.*;
 
 public class KruskalAlgorithm {
-    public static class Triplet implements Comparable<Triplet>{
+    public static class Pair implements Comparable<Pair>{
         int u;
         int v;
         int d;
 
-        Triplet(int u, int v, int d){
+        Pair(int u, int v, int d){
             this.u = u;
             this.v = v;
             this.d = d;
         }
 
-        public int compareTo(Triplet t){
+        public int compareTo(Pair t){
             return Integer.compare(this.d, t.d);
         }
     }
@@ -56,20 +56,20 @@ public class KruskalAlgorithm {
         System.out.print("Enter the no. of edges in the Graph: ");
         int E = sc.nextInt();
 
-        PriorityQueue<Triplet> pq = new PriorityQueue<>();
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
 
         System.out.println("Enter the edges in the form of (u v d):");
         for (int i=0; i<E; i++){
             int u = sc.nextInt();
             int v = sc.nextInt();
             int d = sc.nextInt();
-            pq.add(new Triplet(u, v, d));
+            pq.add(new Pair(u, v, d));
         }
 
-        List<Triplet> minimumSpanningTree = new ArrayList<>();
+        List<Pair> minimumSpanningTree = new ArrayList<>();
         int sum = 0;
         while (pq.size()>0){
-            Triplet top = pq.remove();
+            Pair top = pq.remove();
             int u = top.u;
             int v = top.v;
             int d = top.d;
@@ -83,7 +83,7 @@ public class KruskalAlgorithm {
             }
         }
 
-        for (Triplet t : minimumSpanningTree){
+        for (Pair t : minimumSpanningTree){
             int u = t.u;
             int v = t.v;
             int d = t.d;
