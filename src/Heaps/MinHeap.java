@@ -7,8 +7,36 @@ public class MinHeap {
         int[] arr;
         int idx = 1;
 
+        Heap(int capacity){
+            arr = new int[capacity+1];
+            Arrays.fill(arr, Integer.MAX_VALUE);
+        }
+
         int size(){
             return idx-1;
+        }
+
+        void peek(){
+            if (idx==1){
+                System.out.println("Heap is Empty!");
+                return;
+            }
+            else{
+                System.out.println("Peek Element: "+arr[1]);
+                return;
+            }
+        }
+
+        void display(){
+            if (idx==1){
+                System.out.println("Heap is Empty!");
+                return;
+            }
+            System.out.print("Heap: ");
+            for (int i=1; i<idx; i++){
+                System.out.print(arr[i]+" ");
+            }
+            System.out.println();
         }
 
         void add(int ele){
@@ -31,6 +59,7 @@ public class MinHeap {
                     break;
                 }
             }
+            System.out.println("Element Added: "+ele);
         }
 
         void remove(){
@@ -39,7 +68,7 @@ public class MinHeap {
                 return;
             }
             int min = arr[1];
-            System.out.println(min);
+            System.out.println("Element Removed: "+min);
             arr[1]=arr[idx-1];
             arr[idx-1]=Integer.MAX_VALUE;
             idx--;
@@ -85,43 +114,55 @@ public class MinHeap {
                 }
             }
         }
-
-        void display(){
-            for (int i=1; i<idx; i++){
-                System.out.print(arr[i]+" ");
-            }
-            System.out.println();
-        }
-
-        Heap(int capacity){
-            arr = new int[capacity+1];
-            Arrays.fill(arr, Integer.MAX_VALUE);
-        }
     }
     public static void main(String[] args) {
-        Heap heap = new Heap(10);
+        Heap heap = new Heap(7);
         heap.add(10);
+        heap.peek();
         heap.display();
 
         heap.add(15);
+        heap.peek();
         heap.display();
 
         heap.add(8);
+        heap.peek();
         heap.display();
 
         heap.add(9);
+        heap.peek();
         heap.display();
 
         heap.add(4);
+        heap.peek();
         heap.display();
 
         heap.remove();
+        heap.peek();
         heap.display();
 
         heap.add(2);
+        heap.peek();
         heap.display();
 
         heap.remove();
+        heap.peek();
+        heap.display();
+
+        heap.add(12);
+        heap.peek();
+        heap.display();
+
+        heap.add(5);
+        heap.peek();
+        heap.display();
+
+        heap.add(17);
+        heap.peek();
+        heap.display();
+
+        heap.add(14);
+        heap.peek();
         heap.display();
     }
 }
