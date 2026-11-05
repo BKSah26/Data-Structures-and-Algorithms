@@ -1,6 +1,15 @@
 package Linked_List;
 
 public class Indexing {
+    public static class Node{
+        int val;
+        Node next;
+
+        Node(int val){
+            this.val = val;
+        }
+    }
+
     public static int get(Node head, int idx){
         Node temp = head;
         for (int i=0; i<idx; i++){

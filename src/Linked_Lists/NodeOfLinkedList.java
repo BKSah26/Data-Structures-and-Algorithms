@@ -1,14 +1,17 @@
-package Linked_List;
+package Linked_Lists;
 
-class Node{
-    int val;
-    Node next;
+import java.util.*;
 
-    Node(int val){
-        this.val = val;
-    }
-}
 public class NodeOfLinkedList {
+    public static class Node{
+        int val;
+        Node next;
+
+        Node(int val){
+            this.val = val;
+        }
+    }
+
     public static void main(String[] args) {
         //10 20 30 40 50
         Node a = new Node(10);

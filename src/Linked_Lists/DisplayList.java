@@ -1,6 +1,15 @@
-package Linked_List;
+package Linked_Lists;
 
 public class DisplayList {
+    public static class Node{
+        int val;
+        Node next;
+
+        Node(int val){
+            this.val = val;
+        }
+    }
+
     public static void display(Node head){
         Node temp = head;
         while (temp!=null){
