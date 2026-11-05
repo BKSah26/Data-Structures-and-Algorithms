@@ -1,6 +1,6 @@
 package Linked_Lists;
 
-public class RecursiveDisplay {
+public class DisplayUsingRecursion {
     public static class Node{
         int val;
         Node next;
