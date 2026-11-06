@@ -13,13 +13,15 @@ public class ReverseLinkedListUsingRecursion {
         }
     }
 
-    public static Node reverse(Node first, Node second){
-        Node third = second.next;
-        second.next = first;
-        if (third == null){
-            return second;
+    public static Node reverse(Node head){
+        if (head.next == null){
+            return head;
         }
-        return reverse(second, third);
+        Node a = head.next;
+        head.next = null;
+        Node b = reverse(a);
+        a.next = head;
+        return b;
     }
 
     public static void main(String[] args) {
@@ -40,8 +42,7 @@ public class ReverseLinkedListUsingRecursion {
             ptr = ptr.next;
         }
 
-        Node newHead = reverse(head, head.next);
-        head.next = null;
+        Node newHead = reverse(head);
         ptr = newHead;
         while (ptr!=null){
             System.out.print(ptr.val+" ");
